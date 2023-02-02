@@ -169,7 +169,6 @@
 
       // for every category (param)...
       for (let paramId in thisProduct.data.params) {
-        console.log('---------pętla duża-------------');
         // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
         const param = thisProduct.data.params[paramId];
         console.log('paramId, param');
@@ -179,8 +178,7 @@
         for (let optionId in param.options) {
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
-          console.log('optionId, option');
-          console.log(optionId, option);
+
           if (formData[paramId] && formData[paramId].includes(optionId)) {
             if (!option.default) {
               price = price + option.price;
@@ -191,14 +189,11 @@
             }
           }
         }
-        console.log('---------pętla duża-------------');
 
       }
 
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
-      console.log('---------process order2-------------');
-
     }
   }
 
