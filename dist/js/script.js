@@ -242,7 +242,9 @@
       /* TODO Add validation */
 
       if (thisWidget.value !== newValue && !isNaN(newValue)) {
-        thisWidget.value = newValue;
+        if(newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax){
+          thisWidget.value = newValue;
+        }
       }
 
       thisWidget.input.value = thisWidget.value;
