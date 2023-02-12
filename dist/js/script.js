@@ -101,7 +101,6 @@
 
     initMenu: function () {
       const thisApp = this;
-      console.log('thisApp.data:', thisApp.data);
 
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
@@ -110,11 +109,6 @@
 
     init: function () {
       const thisApp = this;
-      console.log('*** App starting ***');
-      console.log('thisApp:', thisApp);
-      console.log('classNames:', classNames);
-      console.log('settings:', settings);
-      console.log('templates:', templates);
 
       thisApp.initData();
       thisApp.initMenu();
@@ -247,7 +241,6 @@
 
     initOrderForm() {
       const thisProduct = this;
-      console.log('initOrderForm');
 
       thisProduct.form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -324,8 +317,6 @@
       thisWidget.getElements(element);
       thisWidget.setValue(settings.amountWidget.defaultValue);
       thisWidget.initActions();
-      console.log('AmountWidget:', thisWidget);
-      console.log('constructor arguments:', element);
     }
 
     getElements(element) {
@@ -386,7 +377,6 @@
       thisCart.products = [];
       thisCart.getElements(element);
       thisCart.initActions();
-      console.log('new cart', thisCart);
     }
 
     add(menuProduct) {
@@ -402,7 +392,6 @@
       cartContainer.appendChild(thisCart.dom.productList);
 
       thisCart.products.push(new CartProduct(menuProduct, thisCart.dom.productList));
-      console.log('thisCart.products', thisCart.products);
     }
 
     getElements(element) {
@@ -438,7 +427,6 @@
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
-      console.log(thisCartProduct);
     }
 
     getElements(element) {
