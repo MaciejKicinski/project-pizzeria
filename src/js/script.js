@@ -413,11 +413,8 @@
       /* generate HTML based on template */
       const generateHTML = templates.cartProduct(menuProduct);
       /* create element using utils.createElementFromHTML */
-      thisCart.dom.productList = utils.createDOMFromHTML(generateHTML);
-      /* find menu container */
-      const cartContainer = document.querySelector(select.containerOf.cart);
-      /* add element to menu */
-      cartContainer.appendChild(thisCart.dom.productList);
+      const generatedDOM = utils.createDOMFromHTML(generateHTML);
+      thisCart.dom.productList.appendChild(generatedDOM);
 
       thisCart.products.push(new CartProduct(menuProduct, thisCart.dom.productList));
       thisCart.update();
