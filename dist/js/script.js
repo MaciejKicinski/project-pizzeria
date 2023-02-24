@@ -427,9 +427,10 @@
       const generateHTML = templates.cartProduct(menuProduct);
       /* create element using utils.createElementFromHTML */
       const generatedDOM = utils.createDOMFromHTML(generateHTML);
-      thisCart.dom.productList.appendChild(generatedDOM);
+      const cartContainer = thisCart.dom.productList;
+      cartContainer.appendChild(generatedDOM);
 
-      thisCart.products.push(new CartProduct(menuProduct, thisCart.dom.productList));
+      thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
       thisCart.update();
     }
 
