@@ -392,10 +392,6 @@
       console.log('----------------------------------------------------------');
 
       for (let product of thisCart.products) {
-        console.log('for loop start');
-        console.log('totalNumber', totalNumber);
-        console.log('product.price =>', product.price);
-        console.log('for loop end');
         totalNumber += 1;
         subtotalPrice += product.price;
       }
@@ -408,16 +404,10 @@
 
       thisCart.dom.deliveryFee.innerHTML = deliveryFee;
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
-      thisCart.dom.totalPrice.innerHTML = thisCart.totalPrice;
       thisCart.dom.totalNumber = totalNumber;
-
-      console.log('deliveryFee', deliveryFee);
-      console.log('totalNumber', totalNumber);
-      console.log('subtotalPrice', subtotalPrice);
-      console.log('thisCart.totalPrice', thisCart.totalPrice);
-      console.log('thisCart.products =>', thisCart.products[0].price);
-      console.log('----------------------------------------------------------');
-
+      for(let totalPrice of thisCart.dom.totalPrice) {
+        totalPrice.innerHTML = thisCart.totalPrice;
+      }
     }
 
     add(menuProduct) {
@@ -445,7 +435,7 @@
 
       thisCart.dom.deliveryFee = element.querySelector(select.cart.deliveryFee);
       thisCart.dom.subtotalPrice = element.querySelector(select.cart.subtotalPrice);
-      thisCart.dom.totalPrice = element.querySelector(select.cart.totalPrice);
+      thisCart.dom.totalPrice = element.querySelectorAll(select.cart.totalPrice);
       thisCart.dom.totalNumber = element.querySelector(select.cart.totalNumber);
     }
 
