@@ -8,8 +8,6 @@ class Booking {
     const thisBooking = this;
     thisBooking.render(element);
     thisBooking.initWidgets();
-    thisBooking.getElements(element);
-
   }
 
   render(element) {
@@ -29,8 +27,8 @@ class Booking {
   initWidgets() {
     const thisBooking = this;
 
-    thisBooking.peopleAmount = new AmountWidget(thisBooking.dom.peopleAmount);
-    thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
+    thisBooking.peopleAmountWidget = new AmountWidget(thisBooking.dom.peopleAmount);
+    thisBooking.hoursAmountWidget = new AmountWidget(thisBooking.dom.hoursAmount);
 
   }
 
