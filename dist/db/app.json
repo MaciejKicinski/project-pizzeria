@@ -1,8 +1,8 @@
 {
-   "events": [
+   "event": [
       {
          "id": 1,
-         "date": "2021-01-01",
+         "date": "2023-05-03",
          "hour": "12:30",
          "table": 1,
          "repeat": false,
@@ -59,8 +59,20 @@
          ]
       }
    ],
-   "bookings": [],
-   "orders": [],
+   "booking": [
+      {
+         "id": 1,
+         "date": "2023-05-03",
+         "hour": "16:00",
+         "table": 1,
+         "duration": 3,
+         "ppl": 4,
+         "starters": [
+            "water"
+         ]
+      }
+   ],
+   "order": [],
    "products": [
       {
          "id": "cake",
