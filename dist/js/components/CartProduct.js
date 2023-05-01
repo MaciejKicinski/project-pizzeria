@@ -50,6 +50,7 @@ class CartProduct {
       thisCartProduct.price = thisCartProduct.amount * thisCartProduct.priceSingle;
       thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
     });
+    thisCartProduct.amountWidget.value = thisCartProduct.amount;
   }
 
   remove() {
