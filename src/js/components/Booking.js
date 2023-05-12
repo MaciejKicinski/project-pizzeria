@@ -10,6 +10,7 @@ class Booking {
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
+    thisBooking.initActions();
   }
 
   getData() {
@@ -147,7 +148,7 @@ class Booking {
     if (
       typeof thisBooking.booked[thisBooking.date] == 'undefined' ||
       typeof thisBooking.booked[thisBooking.date][thisBooking.hour] ==
-        'undefined'
+      'undefined'
     ) {
       allAvailable = true;
     }
@@ -193,7 +194,6 @@ class Booking {
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(
       select.booking.tables
     );
-
   }
 
   initWidgets() {
@@ -208,9 +208,22 @@ class Booking {
     thisBooking.datePickerWidget = new DatePicker(thisBooking.dom.datePicker);
     thisBooking.hourPickerWidget = new HourPicker(thisBooking.dom.hourPicker);
 
+
+  }
+
+  initActions() {
+    const thisBooking = this;
     thisBooking.dom.wrapper.addEventListener('updated', function () {
       thisBooking.updateDOM();
     });
+    thisBooking.dom.tables.addEventListener('click', function (event) {
+      thisBooking.updateReservationForm(event);
+    });
+
+  }
+
+  updateReservationForm(event) {
+    console.log(event);
   }
 }
 
