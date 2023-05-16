@@ -214,14 +214,31 @@ class Booking {
 
     thisBooking.dom.tables.forEach(element => {
       element.addEventListener('click', function (event) {
-        thisBooking.updateReservationForm(event);
+        thisBooking.initTables(event);
       });
     });
 
   }
 
-  updateReservationForm(event) {
+  initTables(event) {
+    const thisBooking = this;
     console.log(event);
+    const table = event.target.getAttribute(settings.booking.tableIdAttribute);
+    if(table != null) {
+      if(event.target.classList.contains('booked'))     {
+        alert('table booked');
+      } else if (event.target.classList.contains('selected')){
+        event.target.classList.remove('selected');
+      } else{
+        thisBooking.resetTables();
+        event.target.classList.add('selected');
+        thisBooking.selectedTable = table;
+      }
+    }
+  }
+
+  resetTables(){
+
   }
 }
 
