@@ -225,20 +225,24 @@ class Booking {
     console.log(event);
     const table = event.target.getAttribute(settings.booking.tableIdAttribute);
     if(table != null) {
-      if(event.target.classList.contains('booked'))     {
+      if(event.target.classList.contains(classNames.booking.booked))     {
         alert('table booked');
-      } else if (event.target.classList.contains('selected')){
-        event.target.classList.remove('selected');
+      } else if (event.target.classList.contains(classNames.booking.selected)){
+        event.target.classList.remove(classNames.booking.selected);
       } else{
         thisBooking.resetTables();
-        event.target.classList.add('selected');
+        event.target.classList.add(classNames.booking.selected);
         thisBooking.selectedTable = table;
       }
     }
   }
 
   resetTables(){
-
+    const thisBooking = this; 
+    thisBooking.dom.tables.forEach(element => {
+      if(element.classList.contains(classNames.booking.selected))
+        element.classList.remove(classNames.booking.selected);
+    });
   }
 }
 
