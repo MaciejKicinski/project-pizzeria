@@ -225,7 +225,7 @@ class Booking {
     console.log(event);
     const table = event.target.getAttribute(settings.booking.tableIdAttribute);
     if(table != null) {
-      if(event.target.classList.contains(classNames.booking.booked))     {
+      if(event.target.classList.contains(classNames.booking.tableBooked))     {
         alert('table booked');
       } else if (event.target.classList.contains(classNames.booking.selected)){
         event.target.classList.remove(classNames.booking.selected);
