@@ -65,7 +65,6 @@ const app = {
         return response.json();
       })
       .then(function (responseBody) {
-        console.log('responseBody', responseBody);
 
         thisApp.data.products = responseBody;
 

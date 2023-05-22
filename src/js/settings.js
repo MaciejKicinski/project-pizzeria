@@ -44,6 +44,12 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
+    form: '.booking-form',
+    orderConfirmation: '.order-confirmation',
+    phone: '[name=phone]',
+    address: '[name=address]',
+    starter:  '[name=starter]',
+
   },
   nav: {
     links: '.main-nav a',
@@ -68,6 +74,7 @@ export const select = {
     remove: '[href="#remove"]',
   },
   // CODE ADDED END
+
 };
 
 export const classNames = {
